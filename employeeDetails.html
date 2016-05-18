@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>MYOE</title>
+<style>
+
+.header {
+	background-color: #6a1f7e;
+	text-align: center;
+	color: white;
+	font-family: "Arial";
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border: none;
+	font-size: 30px;
+	width: 100%;
+	height: 10%;
+	position: relative;
+	background-image: linear-gradient(#6a1f7e, #8E2CA8);
+
+}
+
+html {
+    padding:0;
+    margin:0;
+}
+
+ body {
+	padding: 0;
+	margin: 0;
+ }
+
+
+#top_row {
+	font-weight: bold;
+	background-color: #8E2CA8;
+	color: white;
+}
+
+table, tr, td {
+	border: 1px solid black;
+	font-family: "Arial";
+}
+
+.thebutton {
+	background-color: #73bb36;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin-left: 2%;
+	margin-top: 7%;
+	margin-bottom: 5%;
+}
+
+td {
+	padding: 15px 90px;
+}
+
+.thebutton:hover {
+	background-color: #589522;
+	cursor: pointer;
+}
+
+.search {
+	font-weight: bold;
+	margin-top: 7%;
+	font-family: "Arial";
+	margin-left: 8%;
+	font-size: 18px;
+	text-align: center;
+	background-color: #BE90D4;
+	color: white;
+	background-image: linear-gradient(#6a1f7e, #8E2CA8);
+	position: absolute;
+	border-radius: 25px;
+	float: left;
+}
+
+#secret {
+	padding: 0;
+    margin: 0;
+	cursor: default;
+}
+
+.table_data {
+	position: absolute;
+	float: left;
+	font-weight: bold;
+	font-family: "Arial";
+	font-size: 18px;
+	margin-left: 30%;
+	margin-top: 7%;
+}
+
+</style>
+<link rel="shortcut icon" href="http://i.imgur.com/eNfvE2h.png" type="image/x-icon">
+<!--<link rel="stylesheet" href="NoName.css">-->
+</head>
+<body>
+
+<div class="header">
+<form method="link" action="http://myob.co.nz/">
+<input type="image" src="http://i.imgur.com/eNfvE2h.png" id="secret">
+</form>
+<h1>Welcome to MYOE</h1>
+<h4>Your <font color="#73bb36">simple</font> Payroll solution</h4>
+</div>
+
+<div class="search">
+
+<form type="text">
+
+	<p>Search More Employees</p><input id = "prank" type="text" name="Name">
+
+	<input type="text" value="Search" class="thebutton" onclick="myFunction()">
+</form>
+
+</div>
+
+<div class="table_data"
+{%for c in content%}
+<p>{{c}}</p>
+{%endfor%}
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("prank").value
+    window.location.assign("http://127.0.0.1:8000/payroll/" + x)
+}
+</script>
+</body>
+</html>
